@@ -4,13 +4,13 @@
 #                 Transform data, and build base dataset.  
 #
 #
-#Author		               :Roman Ch¹dzyñski
+#Author		               :Roman Ch?dzy?ski
 #Last modification date  :2020-04-19
 #Last R_version    :R version 3.6.3
 #
-# v1.0 by Roman Ch¹dzyñski - initial version
-# v1.1 by Roman Ch¹dzyñski - change sources for   European Center for Disease Prevention from Excel to csv
-# v2.0 by Roman Ch¹dzyñski - change sources for   European Center for Disease Prevention from Excel to csv
+# v1.0 by Roman Ch?dzy?ski - initial version
+# v1.1 by Roman Ch?dzy?ski - change sources for   European Center for Disease Prevention from Excel to csv
+# v2.0 by Roman Ch?dzy?ski - change sources for   European Center for Disease Prevention from Excel to csv
 
 #TODO:
 #add comparative data flu WHO
@@ -117,14 +117,14 @@ f_orderColumnFinallDataSet <- function(nameOfVector){
 CONST_ECfDP_URL <- "https://opendata.ecdc.europa.eu/covid19/casedistribution/csv"
 
 #files with data about population over 70
-CONST_WORLDBANK_FILES <- "C:/Users/Rzutnik/Desktop/R/data/WorldBank/"
+CONST_WORLDBANK_FILES <- "../data/WorldBank/"
 CONST_WORLDBANK_FILES_INDICATORS <- paste0(CONST_WORLDBANK_FILES,"indicators/") 
 
 #files with data about country distance
-CONST_COUTRY_DISTANCE_FILE <- "C:/Users/Rzutnik/Desktop/R/data/countries_distances.csv"
+CONST_COUTRY_DISTANCE_FILE <- "../data/countries_distances.csv"
 
 #files with data about country 
-CONST_COUTRY_FILE <- "C:/Users/Rzutnik/Desktop/R/data/country.txt"
+CONST_COUTRY_FILE <- "../data/country.txt"
 
 #key for identity country 
 CONST_COUNTRY_KEY <- "country"
@@ -146,7 +146,7 @@ CONST_EXPORT_DATASET <- c('df_COVID19Base', 'df_Country_DICT')
 ###############################
 # MAIN (STAGE AREA) - EXTRACT MAIN COVID 19 SET FROM URL the European Center for Disease Prevention and Control 
 #download the dataset from the website to a local temporary file
-#read the Dataset sheet into “R”. The dataset will be called "data".
+#read the Dataset sheet into ?R?. The dataset will be called "data".
 data_m00 <- read.csv(CONST_ECfDP_URL, na.strings = "", fileEncoding = "UTF-8-BOM")
 
 #change name of colummn to identity 
