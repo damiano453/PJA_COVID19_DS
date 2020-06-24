@@ -117,14 +117,14 @@ f_orderColumnFinallDataSet <- function(nameOfVector){
 CONST_ECfDP_URL <- "https://opendata.ecdc.europa.eu/covid19/casedistribution/csv"
 
 #files with data about population over 70
-CONST_WORLDBANK_FILES <- "../data/WorldBank/"
+CONST_WORLDBANK_FILES <- "D:/___PJA_Projekt/R_project_pja/data/WorldBank/"
 CONST_WORLDBANK_FILES_INDICATORS <- paste0(CONST_WORLDBANK_FILES,"indicators/") 
 
 #files with data about country distance
-CONST_COUTRY_DISTANCE_FILE <- "../data/countries_distances.csv"
+CONST_COUTRY_DISTANCE_FILE <- "D:/___PJA_Projekt/R_project_pja/data/countries_distances.csv"
 
 #files with data about country 
-CONST_COUTRY_FILE <- "../data/country.txt"
+CONST_COUTRY_FILE <- "D:/___PJA_Projekt/R_project_pja/data/country.txt"
 
 #key for identity country 
 CONST_COUNTRY_KEY <- "country"
