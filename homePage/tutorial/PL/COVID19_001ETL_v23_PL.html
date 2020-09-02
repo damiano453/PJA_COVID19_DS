@@ -13017,823 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    /*
-
-  Dark theme for Jupyter Notebook/iPython 4
-
-  Author: Theodore Pak
-
-  Repo at: https://github.com/powerpak/jupyter-dark-theme
-
-
-
-  Inspired by and adapted from the following:
-
-  Base16 for iPython Notebook (https://github.com/nsonnad/base16-ipython-notebook)
-
-  Base16 Twilight Dark, David Hart (http://hart-dev.com)
-
-  CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
-
-  CodeMirror template by Jan T. Scott (https://github.com/idleberg/base16-chrome-devtools)
-
-  Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-
-*/
-
-
-
-body, body.notebook_app.command_mode {
-
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-}
-
-
-
-/* 
-
-  SET THE CODE/MONOSPACE FONT 
-
-
-
-  I prefer Bitsream Vera Sans Mono, which is freely downloadable here:
-
-  http://www.dafont.com/bitstream-vera-mono.font
-
-  However, there are plenty of alternatives at http://programmingfonts.org/
-
-  in which case, add your preferred font to the stack below.
-
-*/
-
-
-
-.CodeMirror pre, .CodeMirror-dialog, .CodeMirror-dialog .CodeMirror-search-field, .terminal-app .terminal {
-
-    font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
-
-    font-size: 9pt;
-
-}
-
-.terminal-app .terminal { line-height: 1.3em; }
-
-div.output pre, div.output code, .rendered_html pre, .rendered_html code, div.completions select, div.container pre {
-
-  font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
-
-}
-
-div.output pre, div.output code, .rendered_html pre, .rendered_html p code, div.completions select, div.container pre, .rendered_html li code {
-
-    font-size: 9pt;
-
-}
-
-
-
-div.prompt, div.tooltiptext pre {
-
-    font-family: "Bitstream Vera Sans Mono", Monaco, monospace;
-
-    font-size: 8pt;
-
-}
-
-
-
-div.input_area {
-
-    border-color: rgba(0, 0, 0, 0.10);
-
-    background: rbga(0, 0, 0, 0.5);
-
-}
-
-
-
-/* GLOBALS */
-
-
-
-@media not print { body { background-color: #eee; } }
-
-a { color: #CF4A4C; }
-
-a:hover, a:focus { color: #DE6F71; }
-
-
-
-/* INTRO PAGE */
-
-
-
-body[data-notebook-path] { background-color: #222; }
-
-body[data-notebook-path] #header, .terminal-app #header { display: none !important; }
-
-
-
-.tabbable { color: #979797; }
-
-.nav-tabs { border-bottom-color: #444; }
-
-.nav-tabs > li > a:hover, .nav > li > a:focus {
-
-  background-color: #333;
-
-  border-color: #222 #222 #555 #222;
-
-}
-
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { 
-
-  color: #979797;
-
-  background-color: #444;
-
-  border-top-color: #444;
-
-  border-right-color: #444;
-
-  border-left-color: #444;
-
-}
-
-.list_container { border-color: #444; }
-
-.list_container > div { border-bottom-color: #444; }
-
-.list_item:hover { background-color: #333; }
-
-.list_header { background-color: #444; }
-
-#notebook_list input[type="checkbox"] { opacity: 0.3; }
-
-#notebook_list input[type="checkbox"]:checked { opacity: 1; }
-
-.item_icon { color: #777; }
-
-.panel { border-color: #444; background-color: #222; }
-
-.panel-default > .panel-heading { border-color: #444; }
-
-#site .panel-group .panel .panel-heading { background-color: #444; }
-
-#running .panel-group .panel .panel-body .list_container .list_item { border-bottom-color: #444; }
-
-
-
-/* Dropdown menus */
-
-
-
-.dropdown-menu {
-
-  background: rgba(50, 50, 50, 0.95);
-
-  color: #b7b7b7;
-
-}
-
-.dropdown-menu > li > a, .dropdown-submenu > a:after, .dropdown-menu > li > a:visited:after {
-
-  color: #b7b7b7;
-
-}
-
-.dropdown-menu .divider {
-
-  background-color: #444;
-
-}
-
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-
-  color: #fff;
-
-  background-color: #444;
-
-}
-
-.dropdown-menu > li > a:hover:after, .dropdown-menu > li > a:focus:after, 
-
-.dropdown-menu > li > a:active:after {
-
-  color: #fff;
-
-}
-
-
-
-/* TERMINAL INTERFACE */
-
-.terminal-app #site { background: #272727; }
-
-.terminal-app .terminal { background: #141414 !important; }
-
-
-
-/* NOTEBOOK AND EDITOR INTERFACE */
-
-
-
-/* comment out the following line to unhide the toolbar */
-
-div#maintoolbar { display: none !important; }
-
-
-
-/*
-
-  Header UI styles
-
-*/
-
-
-
-body.notebook_app > #header { display: block !important; }
-
-.notebook_app > #header, .edit_app > #header { 
-
-  background-color: #333;
-
-  color: #b7b7b7;
-
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-}
-
-.edit_app #menubar .navbar { margin-bottom: 0; }
-
-body > #header .header-bar { background: #444; }
-
-#header .navbar-brand { display: none; }
-
-#header .filename { margin-left: 0; margin-right: 2em; }
-
-#header .current_kernel_logo { width: 24px; height: 24px; }
-
-span.save_widget span.filename:hover {
-
-  background: rgba(255, 255, 255, 0.15);
-
-  color: #fff;
-
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-
-}
-
-.navbar-default {
-
-  background: transparent;
-
-  color: #b7b7b7;
-
-  border-color: #444;
-
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-
-  color: #fff;
-
-}
-
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, 
-
-.navbar-default .navbar-nav > .open > a:focus {
-
-  color: #fff;
-
-  background-color: #444;
-
-}
-
-
-
-@media not print {
-
-  .notebook_app #notebook {
-
-    background: #111;
-
-  }
-
-
-
-  .notebook_app #notebook-container, .edit_app #texteditor-backdrop {
-
-    background: #272727;
-
-  }
-
-}
-
-
-
-/*
-
-  Inverting the notebook editor UI
-
-*/
-
-
-
-.celltoolbar {
-
-  border-color: #444;
-
-  background: #444;
-
-  color: #b7b7b7;
-
-}
-
-.ctb_global_show .ctb_show ~ div.text_cell_render {
-
-  border-color: #444;
-
-}
-
-.celltoolbar select {
-
-  opacity: 0.5;
-
-}
-
-
-
-.modal-dialog .modal-content, .popover, .popover .popover-title {
-
-  background: rgba(50, 50, 50, 0.95);
-
-  color: #b7b7b7;
-
-}
-
-.modal-header, .popover-title {
-
-  border-bottom-color: #444;
-
-}
-
-.modal-footer {
-
-  border-top-color: #444;
-
-}
-
-.modal-dialog .close {
-
-  color: #fff;
-
-  text-shadow: 0 1px 0 #000;
-
-}
-
-.modal-dialog .alert-info {
-
-  background-color: #373E42;
-
-  color: #d9edf7;
-
-}
-
-.popover.bottom > .arrow:after {
-
-  border-bottom-color: #444;
-
-}
-
-
-
-.btn:focus, .btn:active:focus {
-
-  outline: 5px auto rgba(102, 175, 233, 0.3);
-
-  outline-offset: -1px;
-
-}
-
-.btn-default {
-
-  background-color: #555;
-
-  border-color: #222;
-
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-
-  color: #aaa;
-
-}
-
-.btn-default:focus, .btn-default:hover {
-
-  background-color: #555;
-
-  border-color: #222;
-
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
-
-  color: #bbb;
-
-}
-
-.btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
-
-  background-color: #474747;
-
-  color: #999;
-
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
-
-}
-
-.btn-default.disabled:focus, .btn-default.disabled:hover, 
-
-.btn-default[disabled]:focus, .btn-default[disabled]:hover {
-
-  background-color: #555;
-
-  border-color: #222;
-
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-
-  color: #aaa;
-
-}
-
-.btn-default:active:hover, .btn-default:active:focus, 
-
-.open > .dropdown-toggle.btn-default:hover, .open > .dropdown-toggle.btn-default:focus {
-
-  background-color: #474747;
-
-  color: #999;
-
-  border-color: #222;
-
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
-
-}
-
-
-
-.btn-primary {
-
-  color: #eee;
-
-  background-color: #4481b7;
-
-  border-color: #222;
-
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-
-}
-
-.btn-primary:focus, .btn-primary:hover {
-
-  background-color: #4481b7;
-
-  color: #fff;
-
-}
-
-.btn-primary:active {
-
-  background-color: #306ea6;
-
-  color: #ccc;
-
-}
-
-.btn-primary:active:hover, .btn-primary:active:focus {
-
-  background-color: #306ea6;
-
-  color: #ccc;
-
-}
-
-
-
-.form-control {
-
-  background: #222;
-
-  color: #eee;
-
-  border-color: #777;
-
-}
-
-.form-control:focus {
-
-  border-color: #458ac1;
-
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.3);
-
-}
-
-.form-control::selection {
-
-  background: rgba(221, 240, 255, 0.19);
-
-}
-
-
-
-#complete {
-
-  border-color: #444;
-
-  background: rgba(50, 50, 50, 0.95);
-
-  color: #b7b7b7;
-
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-
-}
-
-.completions select {
-
-  background: rgba(50, 50, 50, 0.95);
-
-  color: #b7b7b7;
-
-}
-
-
-
-/*
-
-  Set fonts and styles for outputted content
-
-*/
-
-
-
-div#notebook .text_cell_render {
-
-  font-size: 16.25px;
-
-  font-weight: 300;
-
-  line-height: 1.25;
-
-}
-
-
-
-.rendered_html li p {
-
-  margin-top: 1em;
-
-}
-
-
-
-.rendered_html ol ul, .rendered_html ul ul, .rendered_html ul ol {
-
-  margin-top: 0em;
-
-}
-
-
-
-.rendered_html h1 {
-
-  color: #CF4A4C;
-
-}
-
-
-
-div.output_html { font-family: sans-serif; }
-
-
-
-.notebook_app .rendered_html tbody tr:nth-child(odd) {
-
-  background: rgba(255, 255, 255, 0.05);
-
-}
-
-
-
-/* Outputted SVGs should assume a white background */
-
-.output_svg div {
-
-  background: white;
-
-}
-
-
-
-/*
-
-  Set colors and styles that we only want on the screen, not for print
-
-*/
-
-/* In general, the .notebook_app selector restricts to the "live" notebook editor and not exported HTML versions */
-
-
-
-@media not print {
-
-  .notebook_app div.cell.running .input .input_area { 
-
-    border-left-color: #82591E;
-
-    -webkit-animation-name: pulseBorder;
-
-    -webkit-animation-duration: 1s;
-
-    -webkit-animation-iteration-count: infinite;
-
-    -webkit-animation-direction: alternate;
-
-    -webkit-animation-timing-function: ease-in-out;
-
-  }
-
-  @-webkit-keyframes pulseBorder {
-
-    from { border-left-color: #82591E; }
-
-    to { border-left-color: #eea236; }
-
-  }
-
-  
-
-  .notebook_app div.input_prompt {color: #9b703f;}
-
-  .notebook_app div.output_prompt {color: #9b859d;}
-
-  .notebook_app div.input_area {
-
-    border-radius: 0px;
-
-    border: 1px solid #464b50;
-
-  }
-
-  .notebook_app div.output_subarea { max-width: 100%; }
-
-  .notebook_app div.output_area pre { font-weight: normal; color: #979797; }
-
-  .notebook_app div.output_subarea { font-weight: normal; color: #979797; }
-
-  .notebook_app div.output_stderr {background-color: #A0783C;}
-
-  .notebook_app div.output_stderr pre {color: #eee;}
-
-
-
-  .notebook_app .rendered_html table, .notebook_app .rendered_html th, .notebook_app .rendered_html tr, .notebook_app .rendered_html td {
-
-    border: 1px  #979797 solid;
-
-    color: #979797;
-
-  }
-
-  .notebook_app div.text_cell_render, .notebook_app div.output_html { color: #979797; }
-
-  .notebook_app table.dataframe tr { border: 1px #979797; }
-
-
-
-  .notebook_app .rendered_html pre, .notebook_app .rendered_html code {
-
-    border: 0;
-
-    background-color: #444;
-
-    color: #b0b0b0;
-
-    padding: 0;
-
-  }
-
-}
-
-
-
-/*
-
-  Terminal text coloring
-
-*/
-
-
-
-.notebook_app span.ansi-black-fg,  .notebook_app span.ansi-black-intense-fg  { color: #323537; }
-
-.notebook_app span.ansi-blue-fg,   .notebook_app span.ansi-blue-intense-fg   { color: #afc4db; }
-
-.notebook_app span.ansi-gray-fg,   .notebook_app span.ansi-gray-intense-fg   { color: #838184; }
-
-.notebook_app span.ansi-green-fg,  .notebook_app span.ansi-green-intense-fg  { color: #8f9d6a; }
-
-.notebook_app span.ansi-purple-fg, .notebook_app span.ansi-purple-intense-fg { color: #9b859d; }
-
-.notebook_app span.ansi-red-fg,    .notebook_app span.ansi-red-intense-fg    { color: #cf6a4c; }
-
-.notebook_app span.ansi-yellow-fg, .notebook_app span.ansi-yellow-intense-fg { color: #f9ee98; } 
-
-
-
-/*
-
-  Code editing
-
-*/
-
-
-
-.CodeMirror {background: #141414; color: #F8F8F8;}
-
-div.CodeMirror-selected {background: rgba(221, 240, 255, 0.19) !important;}
-
-#texteditor-backdrop #texteditor-container .CodeMirror-gutter, .CodeMirror-gutters {background: #444; border-right: 0px; color: #777;}
-
-.CodeMirror-linenumber {color: #b4b7b4;}
-
-.CodeMirror-cursor {border-left: 1px solid #A7A7A7 !important; margin-top: -2px; min-height: 18px;} 
-
-
-
-.CodeMirror span.cm-comment {color: #5F5A60; font-style: italic;}
-
-.CodeMirror span.cm-atom {color: #CF6A4C;}
-
-.CodeMirror span.cm-number {color: #CF6A4C;}
-
-
-
-.CodeMirror span.cm-property {color: #F8F8F8;}
-
-.CodeMirror span.cm-attribute {color: #198844;}
-
-.CodeMirror span.cm-keyword {color: #CDA869; font-weight: normal;}
-
-.CodeMirror span.cm-string {color: #8F9D6A;}
-
-.CodeMirror span.cm-string-2 {color: #E9C062;} /* regexp */
-
-.CodeMirror span.cm-operator {color: #CDA869;}
-
-.CodeMirror span.cm-builtin {color: #A36AC7;}
-
-
-
-.CodeMirror span.cm-variable {color: #F8F8F8;}
-
-.CodeMirror span.cm-variable-2 {color: #7587A6;}
-
-.CodeMirror span.cm-variable-3 {color: #7587A6;}
-
-.CodeMirror span.cm-def {color: #9B703F;}
-
-.CodeMirror span.cm-error {color: #F8F8F8; background-color: rgba(86, 45, 86, 0.2);}
-
-.CodeMirror span.cm-bracket {color: #373b41;}
-
-.CodeMirror span.cm-tag {color: #7587A6;}
-
-.CodeMirror span.cm-link {color: #A36AC7;}
-
-
-
-.CodeMirror .CodeMirror-matchingbracket { background-color: #dd3; color: #303030 !important;}
-
-
-
-/*
-
-  Markdown editing
-
-*/
-
-
-
-.cm-s-default span.cm-header {color: #CF4A4C;}
-
-.cm-s-default span.cm-variable-2 {color: #7587A6;}
-
-.cm-s-default span.cm-comment {color: #7F7A80;}
-    </style>
 
 
 <style type="text/css">
@@ -13895,15 +13078,20 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Analiza-danych-w-R">Analiza danych w R<a class="anchor-link" href="#Analiza-danych-w-R">&#182;</a></h1><hr>
-<h2 id="Cz&#281;&#347;&#263;-1---Przygotowanie-danych">Cz&#281;&#347;&#263; 1 - Przygotowanie danych<a class="anchor-link" href="#Cz&#281;&#347;&#263;-1---Przygotowanie-danych">&#182;</a></h2><p>Pierwszą częścia w przypadku przeprowadzania analizy jest pozyskanie oraz przygotowanie danych (ang. "Preprocessing"). Dane można pobierać na wiele różnych sposobów np.:</p>
+<h2 id="Cz&#281;&#347;&#263;-2---Przygotowanie-danych">Cz&#281;&#347;&#263; 2 - Przygotowanie danych<a class="anchor-link" href="#Cz&#281;&#347;&#263;-2---Przygotowanie-danych">&#182;</a></h2><p>Pierwszą częścia w przypadku przeprowadzania analizy jest pozyskanie oraz przygotowanie danych (ang. "Preprocessing"). Dane można wydobyć na wiele różnych sposobów np.:</p>
 <ol>
 <li>pozyskiwanie danych z baz danych</li>
 <li>pobieranie z treści ze stron internetowych (ang. "Web scraping")</li>
 <li>korzystanie z wystawionych zbiorów z baz danych przez interfejsy typu RestAPI</li>
 </ol>
-<p>Przed rozpoczęciem niezbędne jest środowisko programistycznego. Dedykowanym rozwiązaniem dla języka R jest skorzystanie z <a href="https://rstudio.com/#RStudio">RStudio</a>, które pozwala na posiadanie środowiska umożliwiającego wykorzystanie skryptów na lokalnym komputerze. Na potrzeby kursu stworzono środowisko w edytorze <a href="https://jupyter.org/">Jupyter</a>, który osadzono w chmurze AWS Sage Maker. Środowisko umożli skorzystanie z wszyskich elementów wykorzystanych w skryptach. Dodatkowo skrypt można pobrać i uruchomić w lokalnym edytorze Jypyter, co z zainstalowaną <a href="https://anaconda.org/">Anacondą</a> pozwala na posiadanie jednego środowiska z interpreterem języka R oraz różnymi edytorami np. Jupyter, Qt, Spyder, RStudio.
-Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
-<h1 id="1.-Instalacja-i-przygotowanie-&#347;rodowiska">1. Instalacja i przygotowanie &#347;rodowiska<a class="anchor-link" href="#1.-Instalacja-i-przygotowanie-&#347;rodowiska">&#182;</a></h1><h2 id="1.1-Przygotowanie-&#347;rodowiska">1.1 Przygotowanie &#347;rodowiska<a class="anchor-link" href="#1.1-Przygotowanie-&#347;rodowiska">&#182;</a></h2><p>Z uwagi na działanie skrytpu w środowisku produkcyjnym pierwszym krokiem jest wyczyszczenie zmiennych środowiskowych oraz pamięci. Krok ten stanowi zabezpieczenie dla korzystania z wartości wykorzystywanych w poprzednich iteracjach.</p>
+<p>Przed rozpoczęciem niezbędne jest środowisko programistycznego. Dedykowanym rozwiązaniem dla języka R jest skorzystanie z <a href="https://rstudio.com/#RStudio">RStudio</a> wraz z systemem Windows. Rstudio które pozwala na posiadanie lokalnego środowiska umożliwiającego uruchomienia skrytów bez problemów z instalacją bibliotek, czy ich zależnościami. Przy zastosowaniu samego R Studio wystarczy kopiować komendy z pól z kodem do środowiska.</p>
+<p>Dodatkowo na potrzeby kursu skrypty przetorzono w edytorze <a href="https://jupyter.org/">Jupyter</a>, który osadzono w chmurze AWS Sage Maker, na którym może być używany za darmo przez rok w ramach <a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc">AWS Free Tier</a>.</p>
+<p>Zastępstwem dal rozwiązania chmurowego może być wykorzysteanie środowiska <a href="https://anaconda.org/">Anaconda</a>, które integreje środowisko R z różnymi edytoram np. Jupyter, RStudio, Qt, czy Spyder.</p>
+<p>Więcej szczegółów w części 1: <code>Środowisko programistyczne</code>.</p>
+<h1 id="1.-Instalacja-i-przygotowanie-&#347;rodowiska">1. Instalacja i przygotowanie &#347;rodowiska<a class="anchor-link" href="#1.-Instalacja-i-przygotowanie-&#347;rodowiska">&#182;</a></h1><h2 id="1.1-Przygotowanie-&#347;rodowiska">1.1 Przygotowanie &#347;rodowiska<a class="anchor-link" href="#1.1-Przygotowanie-&#347;rodowiska">&#182;</a></h2><p>Scripts written in this course were coded to allow working in production environment. They are not fully optimised, but there are some steps, which aloows to deploy them in test environment.</p>
+<p>First step is to free memory and clean variables which could be used in previous iterations.
+Skrypty były pisane z myślą o ich implementacji w środowisku produkcyjny. Skrypty nie zostały w pełni zoptymalizowane, ale zostało użytych kilka dobrych praktyk, co z pewnością umożliwi uruchomieni w środowisku testowym.</p>
+<p>Pierwszym krokiem jest zwolnienie pamięci oraz usunięcie ewentualnych zmiennych z poprzednich uruchomień.</p>
 
 </div>
 </div>
@@ -14000,6 +13188,14 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2.-Funkcje-TODO">2. Funkcje TODO<a class="anchor-link" href="#2.-Funkcje-TODO">&#182;</a></h1><p><a href="https://www.tutorialspoint.com/r/r_functions.htm">Funkcje</a> są niezbędne do zamknięcia powtarzalnego kodu w ramach jednego zbioru, w celu uporządkowania. Na potrzeby skryptu zostały stworzone 2 funkcje:</p>
+<ol>
+<li><p>f_collapseColumns2Colection</p>
+<p><code>f_collapseColumns2Colection &lt;- function(df_add, key, nameColectColumn,nameNewColumn )</code> przyjmuje jako argumenty df_add, key, nameColectColumn oraz nameNewColumn</p>
+</li>
+<li><p>f_orderColumnFinallDataSet</p>
+</li>
+</ol>
 
 </div>
 </div>
@@ -14064,6 +13260,13 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.-Sta&#322;e-oraz-zmienne-globalne">3. Sta&#322;e oraz zmienne globalne<a class="anchor-link" href="#3.-Sta&#322;e-oraz-zmienne-globalne">&#182;</a></h1><p>Kolejnym etapem jest stworzenie stałych oraz zmiennych globalnych używanych w kodzie. Pozwala to na porządek w tworzeniu kodu. Dodatkowo z użyciem stałych możemy sparametryzować skrypt z użyciem stałych w tym miejscu.
+Należy pamiętać, że trzeba dostosować ścieżki do plików ze statystykami:</p>
+<ol>
+<li>CONST_WORLDBANK_FILES</li>
+<li>CONST_COUTRY_DISTANCE_FILE</li>
+<li>CONST_COUTRY_FILE</li>
+</ol>
 
 </div>
 </div>
@@ -14080,14 +13283,14 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="n">CONST_ECfDP_URL</span> <span class="o">&lt;-</span> <span class="s">&quot;https://opendata.ecdc.europa.eu/covid19/casedistribution/csv&quot;</span>
 
 <span class="c1">#files with data about population over 70</span>
-<span class="n">CONST_WORLDBANK_FILES</span> <span class="o">&lt;-</span> <span class="s">&quot;../data/WorldBank/&quot;</span>
+<span class="n">CONST_WORLDBANK_FILES</span> <span class="o">&lt;-</span> <span class="s">&quot;../../data/WorldBank/&quot;</span>
 <span class="n">CONST_WORLDBANK_FILES_INDICATORS</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="n">CONST_WORLDBANK_FILES</span><span class="p">,</span><span class="s">&quot;indicators/&quot;</span><span class="p">)</span> 
 
 <span class="c1">#files with data about country distance</span>
-<span class="n">CONST_COUTRY_DISTANCE_FILE</span> <span class="o">&lt;-</span> <span class="s">&quot;../data/countries_distances.csv&quot;</span>
+<span class="n">CONST_COUTRY_DISTANCE_FILE</span> <span class="o">&lt;-</span> <span class="s">&quot;../../data/countries_distances.csv&quot;</span>
 
 <span class="c1">#files with data about country </span>
-<span class="n">CONST_COUTRY_FILE</span> <span class="o">&lt;-</span> <span class="s">&quot;../data/country.txt&quot;</span>
+<span class="n">CONST_COUTRY_FILE</span> <span class="o">&lt;-</span> <span class="s">&quot;../../data/country.txt&quot;</span>
 
 <span class="c1">#key for identity country </span>
 <span class="n">CONST_COUNTRY_KEY</span> <span class="o">&lt;-</span> <span class="s">&quot;country&quot;</span>
@@ -14108,13 +13311,15 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="4.-Pobranie-i-przygotowanie-danych-z-European-Center-for-Disease-Prevention-and-Control">4. Pobranie i przygotowanie danych z European Center for Disease Prevention and Control<a class="anchor-link" href="#4.-Pobranie-i-przygotowanie-danych-z-European-Center-for-Disease-Prevention-and-Control">&#182;</a></h1><p>Dane do analizy pobrano ze strony Europejskiego Centrum zapobiegania i kontroli chorób z linku przypisanego do stałej:</p>
+<p><code>CONST_ECfDP_URL &lt;-</code><a href="https://opendata.ecdc.europa.eu/covid19/casedistribution/csv">https://opendata.ecdc.europa.eu/covid19/casedistribution/csv</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#######################################################</span>
@@ -14143,13 +13348,14 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Folder dane posiada dodatkowe pliki z informacjami o populacji oraz o PKB w danych krajach, pobranych wcześniej ze strony Banku Światowego <a href="https://www.worldbank.org/">https://www.worldbank.org/</a>. Warto zauważyć, że niepotrzebne zmienne są kasowane na bieżąco, żeby nie zaśmiecać pamięci niepotrzebnymi zasobami.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">###############################</span>
@@ -14160,7 +13366,7 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="nf">map_df</span><span class="p">(</span><span class="n">read_excel</span><span class="p">,</span> <span class="n">.id</span> <span class="o">=</span> <span class="s">&quot;fileName&quot;</span><span class="p">)</span>
 
 <span class="c1">#filter date only form filter colummn and 2018 year </span>
-<span class="n">df_WordBank</span> <span class="o">&lt;-</span> <span class="n">data_df[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;fileName&#39;</span><span class="p">,</span><span class="s">&quot;Country Name&quot;</span><span class="p">,</span><span class="s">&quot;Country Code&quot;</span><span class="p">,</span><span class="s">&quot;VALUE&quot;</span><span class="p">)</span><span class="n">]</span>
+<span class="n">df_WordBank</span> <span class="o">&lt;-</span> <span class="n">data_df</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;fileName&#39;</span><span class="p">,</span><span class="s">&quot;Country Name&quot;</span><span class="p">,</span><span class="s">&quot;Country Code&quot;</span><span class="p">,</span><span class="s">&quot;VALUE&quot;</span><span class="p">)]</span>
 
 <span class="c1">#transform WorldBank dataSet to add group sex and age </span>
 <span class="n">df_WordBank</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df_WordBank</span><span class="p">,</span> <span class="n">indicatorName</span><span class="o">=</span> <span class="nf">gsub</span><span class="p">(</span><span class="n">CONST_WORLDBANK_FILES</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">fileName</span><span class="p">))</span>
@@ -14186,13 +13392,14 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Wartości pozyskane z Banku Światowego dodane są do zmiennej typu dataFrame o nazwie df_Country_00, która ostatecznie jest zamieniana na df_Country_01, w której nadane zostały docelowe nazwy kolumn. Numeracja przy zmiennej pozwalała na fragmentaryczne debugowanie kodu w trakcie tworzenia, po zakończeniu procesu zmienne są usuwane z użyciem funkcji <code>rm()</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">###############################</span>
@@ -14212,15 +13419,15 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="nf">setnames</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">,</span> <span class="s">&quot;borders&quot;</span><span class="p">,</span> <span class="s">&quot;c_neighbors&quot;</span>  <span class="p">)</span>
 
 <span class="c1">#add (rebiuild) name of country</span>
-<span class="n">df_Country_00</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">,</span> <span class="n">df_Country_00</span><span class="o">$</span><span class="n">name[1]</span><span class="p">)</span>
-<span class="n">df_Country_00</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">,</span> <span class="n">df_Country_00</span><span class="o">$</span><span class="n">name[2]</span><span class="p">)</span>
+<span class="n">df_Country_00</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">,</span> <span class="n">df_Country_00</span><span class="o">$</span><span class="n">name</span><span class="p">[</span><span class="m">1</span><span class="p">])</span>
+<span class="n">df_Country_00</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">,</span> <span class="n">df_Country_00</span><span class="o">$</span><span class="n">name</span><span class="p">[</span><span class="m">2</span><span class="p">])</span>
 <span class="nf">setnames</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">,</span> <span class="s">&quot;common&quot;</span><span class="p">,</span>  <span class="s">&quot;countryCommonName&quot;</span><span class="p">)</span>
 <span class="nf">setnames</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">,</span> <span class="s">&quot;official&quot;</span><span class="p">,</span> <span class="s">&quot;countryOfficialName&quot;</span><span class="p">)</span>
 
 <span class="c1">#rebuild vector data &#39;latlng&#39; to singel data&#39;lat&#39; and &#39;lng&#39;</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">seq.int</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">)))</span> <span class="p">{</span>
-  <span class="n">df_Country_00[i</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;lat&#39;</span><span class="p">)</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="n">df_Country_00</span><span class="o">$</span><span class="n">c_latlng[[i]][1]</span>
-  <span class="n">df_Country_00[i</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;lng&#39;</span><span class="p">)</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="n">df_Country_00</span><span class="o">$</span><span class="n">c_latlng[[i]][2]</span> 
+  <span class="n">df_Country_00</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;lat&#39;</span><span class="p">)]</span> <span class="o">&lt;-</span> <span class="n">df_Country_00</span><span class="o">$</span><span class="n">c_latlng</span><span class="p">[[</span><span class="n">i</span><span class="p">]][</span><span class="m">1</span><span class="p">]</span>
+  <span class="n">df_Country_00</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;lng&#39;</span><span class="p">)]</span> <span class="o">&lt;-</span> <span class="n">df_Country_00</span><span class="o">$</span><span class="n">c_latlng</span><span class="p">[[</span><span class="n">i</span><span class="p">]][</span><span class="m">2</span><span class="p">]</span> 
 <span class="p">}</span>
 
 <span class="c1">#add new colection column c_region, c_subregion </span>
@@ -14232,7 +13439,7 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 
 
 <span class="c1">#zoatawiem c lat i zminiamy na c border</span>
-<span class="n">df_Country_01</span> <span class="o">&lt;-</span> <span class="n">df_Country_00[</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;countryID&quot;</span><span class="p">,</span>  <span class="s">&quot;countryGeoID&quot;</span><span class="p">,</span>             
+<span class="n">df_Country_01</span> <span class="o">&lt;-</span> <span class="n">df_Country_00</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;countryID&quot;</span><span class="p">,</span>  <span class="s">&quot;countryGeoID&quot;</span><span class="p">,</span>             
                                    <span class="s">&quot;countryCommonName&quot;</span><span class="p">,</span> <span class="s">&quot;countryOfficialName&quot;</span><span class="p">,</span>                                 
                                    <span class="s">&quot;independent&quot;</span><span class="p">,</span>
                                    <span class="s">&quot;capital&quot;</span><span class="p">,</span>
@@ -14241,7 +13448,7 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
                                    <span class="s">&quot;c_latlng&quot;</span> <span class="p">,</span><span class="s">&quot;lat&quot;</span><span class="p">,</span> <span class="s">&quot;lng&quot;</span><span class="p">,</span>                 
                                    <span class="s">&quot;region&quot;</span><span class="p">,</span> <span class="s">&quot;c_region&quot;</span><span class="p">,</span>           
                                    <span class="s">&quot;subregion&quot;</span><span class="p">,</span><span class="s">&quot;c_subregion&quot;</span><span class="p">,</span>
-                                   <span class="s">&quot;allGroup&quot;</span> <span class="p">)</span><span class="n">]</span>
+                                   <span class="s">&quot;allGroup&quot;</span> <span class="p">)]</span>
 
 <span class="c1">#clear variables</span>
 <span class="nf">rm</span><span class="p">(</span><span class="n">df_Country_00</span><span class="p">)</span>
@@ -14255,6 +13462,7 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Ten krok jest istotny z punktu widzenia tworzenia mapy. Z pliku "/data/countries_distances.csv" pobierane są odległości między pomiędzy krajami, na podstawie których można utowrzyć mapę ciepła prezentowaną w kolejnych skryptach.</p>
 
 </div>
 </div>
@@ -14270,7 +13478,7 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="n">df_CountryDistance_00</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">CONST_COUTRY_DISTANCE_FILE</span><span class="p">,</span> <span class="n">na.strings</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">fileEncoding</span> <span class="o">=</span> <span class="s">&quot;UTF-8-BOM&quot;</span><span class="p">)</span>
 
 <span class="c1">#load file with countryID </span>
-<span class="n">df_CountryDistance_DICT</span> <span class="o">&lt;-</span> <span class="n">df_Country_01[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;countryID&quot;</span><span class="p">,</span> <span class="s">&quot;countryCommonName&quot;</span><span class="p">,</span> <span class="s">&quot;countryOfficialName&quot;</span><span class="p">)</span><span class="n">]</span>
+<span class="n">df_CountryDistance_DICT</span> <span class="o">&lt;-</span> <span class="n">df_Country_01</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;countryID&quot;</span><span class="p">,</span> <span class="s">&quot;countryCommonName&quot;</span><span class="p">,</span> <span class="s">&quot;countryOfficialName&quot;</span><span class="p">)]</span>
 
 <span class="c1">#join (enrichment) add countryID for left side of distance relation</span>
 <span class="n">df_CountryDistance_01</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_CountryDistance_00</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df_CountryDistance_DICT</span><span class="p">,</span> <span class="n">by.x</span> <span class="o">=</span> <span class="s">&#39;pays1&#39;</span><span class="p">,</span> <span class="n">by.y</span> <span class="o">=</span> <span class="s">&#39;countryCommonName&#39;</span> <span class="p">,</span> <span class="n">all.x</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> 
@@ -14278,19 +13486,19 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="n">df_CountryDistance_01</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_CountryDistance_01</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df_CountryDistance_DICT</span><span class="p">,</span> <span class="n">by.x</span> <span class="o">=</span> <span class="s">&#39;pays1&#39;</span><span class="p">,</span> <span class="n">by.y</span> <span class="o">=</span> <span class="s">&#39;countryOfficialName&#39;</span> <span class="p">,</span> <span class="n">all.x</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">setnames</span><span class="p">(</span><span class="n">df_CountryDistance_01</span><span class="p">,</span> <span class="s">&quot;countryID&quot;</span><span class="p">,</span>  <span class="s">&quot;countryID_02&quot;</span><span class="p">)</span>
 
-<span class="n">df_CountryDistance_01</span> <span class="o">&lt;-</span> <span class="n">df_CountryDistance_01[</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;pays1&#39;</span><span class="p">,</span> <span class="s">&#39;pays2&#39;</span><span class="p">,</span> <span class="s">&#39;dist&#39;</span><span class="p">,</span> <span class="s">&#39;countryID_01&#39;</span><span class="p">,</span><span class="s">&#39;countryID_02&#39;</span><span class="p">)</span><span class="n">]</span>
+<span class="n">df_CountryDistance_01</span> <span class="o">&lt;-</span> <span class="n">df_CountryDistance_01</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;pays1&#39;</span><span class="p">,</span> <span class="s">&#39;pays2&#39;</span><span class="p">,</span> <span class="s">&#39;dist&#39;</span><span class="p">,</span> <span class="s">&#39;countryID_01&#39;</span><span class="p">,</span><span class="s">&#39;countryID_02&#39;</span><span class="p">)]</span>
 <span class="n">df_CountryDistance_01</span> <span class="o">&lt;-</span> <span class="nf">unite</span><span class="p">(</span><span class="n">df_CountryDistance_01</span><span class="p">,</span> <span class="s">&#39;countryID_LEFT&#39;</span> <span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;countryID_01&#39;</span><span class="p">,</span><span class="s">&#39;countryID_02&#39;</span><span class="p">))</span>
 <span class="n">df_CountryDistance_01</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&#39;NA_&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">df_CountryDistance_01</span><span class="o">$</span><span class="n">countryID_LEFT</span><span class="p">)</span>
 <span class="n">df_CountryDistance_01</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="nf">substr</span><span class="p">(</span><span class="n">df_CountryDistance_01</span><span class="o">$</span><span class="n">countryID_LEFT</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
 
 <span class="c1">#coutryID exeption</span>
-<span class="n">df_CountryDistance_01[df_CountryDistance_01</span><span class="o">$</span><span class="n">pays1</span><span class="o">==</span><span class="s">&quot;Macedonia&quot;</span><span class="p">,</span><span class="n">]</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="s">&quot;MKD&quot;</span>
-<span class="n">df_CountryDistance_01[df_CountryDistance_01</span><span class="o">$</span><span class="n">pays1</span><span class="o">==</span><span class="s">&quot;Tobago&quot;</span><span class="p">,</span><span class="n">]</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="s">&quot;TTO&quot;</span>
-<span class="n">df_CountryDistance_01[df_CountryDistance_01</span><span class="o">$</span><span class="n">pays1</span><span class="o">==</span><span class="s">&quot;UK&quot;</span><span class="p">,</span><span class="n">]</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="s">&quot;GBR&quot;</span>
-<span class="n">df_CountryDistance_01[df_CountryDistance_01</span><span class="o">$</span><span class="n">pays1</span><span class="o">==</span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="n">]</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="s">&quot;USA&quot;</span>
+<span class="n">df_CountryDistance_01</span><span class="p">[</span><span class="n">df_CountryDistance_01</span><span class="o">$</span><span class="n">pays1</span><span class="o">==</span><span class="s">&quot;Macedonia&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="s">&quot;MKD&quot;</span>
+<span class="n">df_CountryDistance_01</span><span class="p">[</span><span class="n">df_CountryDistance_01</span><span class="o">$</span><span class="n">pays1</span><span class="o">==</span><span class="s">&quot;Tobago&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="s">&quot;TTO&quot;</span>
+<span class="n">df_CountryDistance_01</span><span class="p">[</span><span class="n">df_CountryDistance_01</span><span class="o">$</span><span class="n">pays1</span><span class="o">==</span><span class="s">&quot;UK&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="s">&quot;GBR&quot;</span>
+<span class="n">df_CountryDistance_01</span><span class="p">[</span><span class="n">df_CountryDistance_01</span><span class="o">$</span><span class="n">pays1</span><span class="o">==</span><span class="s">&quot;USA&quot;</span><span class="p">,]</span><span class="o">$</span><span class="n">countryID_LEFT</span> <span class="o">&lt;-</span> <span class="s">&quot;USA&quot;</span>
 
 <span class="c1">#join (enrichment) add countryID for right side of distance relation</span>
-<span class="n">df_CountryDistance_01_RIGHT</span><span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">df_CountryDistance_01[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;pays1&#39;</span><span class="p">,</span> <span class="s">&#39;countryID_LEFT&#39;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+<span class="n">df_CountryDistance_01_RIGHT</span><span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">df_CountryDistance_01</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;pays1&#39;</span><span class="p">,</span> <span class="s">&#39;countryID_LEFT&#39;</span><span class="p">)])</span>
 <span class="nf">setnames</span><span class="p">(</span><span class="n">df_CountryDistance_01_RIGHT</span><span class="p">,</span> <span class="s">&quot;countryID_LEFT&quot;</span><span class="p">,</span>  <span class="s">&quot;countryID_RIGHT&quot;</span><span class="p">)</span>
 <span class="n">df_CountryDistance_02</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_CountryDistance_01</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df_CountryDistance_01_RIGHT</span><span class="p">,</span> <span class="n">by.x</span> <span class="o">=</span> <span class="s">&#39;pays2&#39;</span><span class="p">,</span> <span class="n">by.y</span> <span class="o">=</span> <span class="s">&#39;pays1&#39;</span> <span class="p">,</span> <span class="n">all.x</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> 
 
@@ -14299,15 +13507,15 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="nf">setnames</span><span class="p">(</span><span class="n">df_CountryDistance_02</span><span class="p">,</span> <span class="s">&quot;pays2&quot;</span><span class="p">,</span>  <span class="s">&quot;countryName_RIGHT&quot;</span><span class="p">)</span>
 
 <span class="c1">#coutryID REJECT</span>
-<span class="n">df_CountryDistance_REJECT</span><span class="o">&lt;-</span> <span class="n">df_CountryDistance_02</span><span class="nf">[</span><span class="p">(</span><span class="n">df_CountryDistance_02</span><span class="o">$</span><span class="n">countryID_LEFT</span><span class="o">==</span><span class="s">&#39;NA&#39;</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">df_CountryDistance_02</span><span class="o">$</span><span class="n">countryID_RIGHT</span><span class="o">==</span><span class="s">&#39;NA&#39;</span><span class="p">),</span><span class="n">]</span>
-<span class="n">df_CountryDistance_02</span> <span class="o">&lt;-</span> <span class="n">df_CountryDistance_02</span><span class="nf">[</span><span class="p">(</span><span class="n">df_CountryDistance_02</span><span class="o">$</span><span class="n">countryID_LEFT</span><span class="o">!=</span><span class="s">&#39;NA&#39;</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df_CountryDistance_02</span><span class="o">$</span><span class="n">countryID_RIGHT</span><span class="o">!=</span><span class="s">&#39;NA&#39;</span><span class="p">),</span><span class="n">]</span>
+<span class="n">df_CountryDistance_REJECT</span><span class="o">&lt;-</span> <span class="n">df_CountryDistance_02</span><span class="p">[(</span><span class="n">df_CountryDistance_02</span><span class="o">$</span><span class="n">countryID_LEFT</span><span class="o">==</span><span class="s">&#39;NA&#39;</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">df_CountryDistance_02</span><span class="o">$</span><span class="n">countryID_RIGHT</span><span class="o">==</span><span class="s">&#39;NA&#39;</span><span class="p">),]</span>
+<span class="n">df_CountryDistance_02</span> <span class="o">&lt;-</span> <span class="n">df_CountryDistance_02</span><span class="p">[(</span><span class="n">df_CountryDistance_02</span><span class="o">$</span><span class="n">countryID_LEFT</span><span class="o">!=</span><span class="s">&#39;NA&#39;</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df_CountryDistance_02</span><span class="o">$</span><span class="n">countryID_RIGHT</span><span class="o">!=</span><span class="s">&#39;NA&#39;</span><span class="p">),]</span>
 
 
 <span class="nf">for </span><span class="p">(</span><span class="n">x_distance</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">300</span><span class="p">,</span><span class="m">500</span><span class="p">,</span><span class="m">1000</span><span class="p">))</span> <span class="p">{</span>
 <span class="n">df_CountryDistance_02_01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df_CountryDistance_02</span><span class="p">,</span> <span class="n">groupDistance</span><span class="o">=</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">dist</span> <span class="o">&lt;</span> <span class="n">x_distance</span><span class="p">,</span> <span class="nf">paste0</span><span class="p">(</span><span class="n">x_distance</span><span class="p">,</span><span class="n">countryID_LEFT</span><span class="p">),</span><span class="m">0</span><span class="p">))</span>
-<span class="n">df_CountryDistance_02_01</span> <span class="o">&lt;-</span> <span class="n">df_CountryDistance_02_01[df_CountryDistance_02_01</span><span class="o">$</span><span class="n">groupDistance</span><span class="o">!=</span><span class="m">0</span><span class="p">,</span><span class="n">]</span>
+<span class="n">df_CountryDistance_02_01</span> <span class="o">&lt;-</span> <span class="n">df_CountryDistance_02_01</span><span class="p">[</span><span class="n">df_CountryDistance_02_01</span><span class="o">$</span><span class="n">groupDistance</span><span class="o">!=</span><span class="m">0</span><span class="p">,]</span>
 <span class="n">df_CountryDistance_02_01</span> <span class="o">&lt;-</span> <span class="nf">f_collapseColumns2Colection</span><span class="p">(</span><span class="n">df_CountryDistance_02_01</span><span class="p">,</span> <span class="s">&quot;groupDistance&quot;</span> <span class="p">,</span><span class="s">&quot;countryID_RIGHT&quot;</span><span class="p">,</span> <span class="s">&quot;c_groupDistance&quot;</span><span class="p">)</span>
-<span class="n">df_CountryDistance_02_01</span> <span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">df_CountryDistance_02_01[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;countryID_LEFT&quot;</span><span class="p">,</span><span class="s">&quot;c_groupDistance&quot;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+<span class="n">df_CountryDistance_02_01</span> <span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">df_CountryDistance_02_01</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;countryID_LEFT&quot;</span><span class="p">,</span><span class="s">&quot;c_groupDistance&quot;</span><span class="p">)])</span>
 <span class="n">df_CountryDistance_DICT</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df_CountryDistance_DICT</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df_CountryDistance_02_01</span><span class="p">,</span> <span class="n">by.x</span> <span class="o">=</span> <span class="s">&#39;countryID&#39;</span><span class="p">,</span> <span class="n">by.y</span> <span class="o">=</span> <span class="s">&#39;countryID_LEFT&#39;</span> <span class="p">,</span> <span class="n">all.x</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> 
 <span class="nf">setnames</span><span class="p">(</span><span class="n">df_CountryDistance_DICT</span><span class="p">,</span> <span class="s">&quot;c_groupDistance&quot;</span><span class="p">,</span>  <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;c_groupDistance&quot;</span><span class="p">,</span> <span class="n">x_distance</span><span class="p">))</span> 
 <span class="p">}</span>
@@ -14328,13 +13536,26 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Poniżej wyliczane są różne statystyki, których wyniki są używane w kolejnych skryptach.
+W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór wynikowy zawiera informacje o populacji, zachorowaniach na koronawirusa oraz odległościach pozwalających na umieszczenie danych na mapie. Dodatkowo do zbioru dodane są statystyki tj.:</p>
+<ol>
+<li>Ilość śmierci od 7-ego dnia po pierwszej śmierci, liczona w interwale tygodniowym</li>
+<li>Ilość śmierci od 30-tego dnia po zanotowaniu pierwszej śmierci, liczona w interwale miesięcznym</li>
+</ol>
+<p>Dodatkowo statystyki wyznaczono dla:</p>
+<ol>
+<li>całej populacji </li>
+<li>kobiet, mężczyzn i skumulowanej liczby osób powyżej 70-ego roku życia</li>
+<li>kobiet, mężczyzn i skumulowanej liczby osób powyżej 80-ego roku życia</li>
+</ol>
+<p>W celu umożliwienia przeprowadzenia bardziej obiektywnej analizy porównawczej pomiędzy poszczególnymi państwami, w których jest różna ilość mieszkańców (często różnice w ilości ludności sięgają więcej niż 100%), ilość zgonów i zachorowań przeliczano na 100 tyś. mieszkańców danego państwa.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#######################################################</span>
@@ -14362,9 +13583,9 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="nf">rm</span><span class="p">(</span><span class="n">data_m00</span><span class="p">)</span>
 
 <span class="c1">##TRANSFORM dateRep is not null and coutry_id is not null</span>
-<span class="n">data_m01_REJECT</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="nf">[is.na</span><span class="p">(</span><span class="n">data_m01</span><span class="o">$</span><span class="n">dateRep</span><span class="p">)</span> <span class="o">|</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01</span><span class="o">$</span><span class="n">countryID</span><span class="p">)</span> <span class="o">|</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01</span><span class="o">$</span><span class="n">countryOfficialName</span><span class="p">),</span><span class="n">]</span>
-<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="n">data_m01[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01[</span><span class="p">,</span><span class="s">&#39;dateRep&#39;</span><span class="n">]</span><span class="p">),</span><span class="n">]</span>
-<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="n">data_m01[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01[</span><span class="p">,</span><span class="n">CONST_COUNTRYID_KEY]</span><span class="p">),</span><span class="n">]</span>
+<span class="n">data_m01_REJECT</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="p">[</span><span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01</span><span class="o">$</span><span class="n">dateRep</span><span class="p">)</span> <span class="o">|</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01</span><span class="o">$</span><span class="n">countryID</span><span class="p">)</span> <span class="o">|</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01</span><span class="o">$</span><span class="n">countryOfficialName</span><span class="p">),]</span>
+<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01</span><span class="p">[,</span><span class="s">&#39;dateRep&#39;</span><span class="p">]),]</span>
+<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">data_m01</span><span class="p">[,</span><span class="n">CONST_COUNTRYID_KEY</span><span class="p">]),]</span>
 
 <span class="c1">#TRANSFORM remove not use column</span>
 <span class="n">data_m01</span><span class="o">$</span><span class="n">continentExp</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
@@ -14444,27 +13665,27 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day1Death</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">cumSumDeath1DayNatural</span><span class="o">&gt;</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
 <span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day1Case</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span> <span class="n">cumSumCases1DayNatural</span> <span class="o">&gt;</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
 
-<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day1cumSumDeathP1mAll</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">cumSumDeath1DayNatural</span> <span class="o">&gt;</span><span class="p">(</span><span class="m">1</span><span class="o">*</span><span class="p">(</span><span class="n">population2018_A</span><span class="o">/</span><span class="p">(</span><span class="m">10</span><span class="n">^6</span><span class="p">))),</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
-<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day10cumSumCaseP1mAll</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span> <span class="n">cumSumCases1DayNatural</span> <span class="o">&gt;</span><span class="p">(</span><span class="m">10</span><span class="o">*</span><span class="p">(</span><span class="n">population2018_A</span><span class="o">/</span><span class="p">(</span><span class="m">10</span><span class="n">^6</span><span class="p">))),</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
+<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day1cumSumDeathP1mAll</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">cumSumDeath1DayNatural</span> <span class="o">&gt;</span><span class="p">(</span><span class="m">1</span><span class="o">*</span><span class="p">(</span><span class="n">population2018_A</span><span class="o">/</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">6</span><span class="p">))),</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
+<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day10cumSumCaseP1mAll</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span> <span class="n">cumSumCases1DayNatural</span> <span class="o">&gt;</span><span class="p">(</span><span class="m">10</span><span class="o">*</span><span class="p">(</span><span class="n">population2018_A</span><span class="o">/</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">6</span><span class="p">))),</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
 
-<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day1cumSumDeathP100t_A_70</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">cumSumDeath1DayNatural</span> <span class="o">&gt;</span><span class="p">(</span><span class="m">1</span><span class="o">*</span><span class="p">(</span><span class="n">population2018_A_70</span><span class="o">/</span><span class="p">(</span><span class="m">10</span><span class="n">^5</span><span class="p">))),</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
-<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day10cumSumCaseP100t_A_70</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span> <span class="n">cumSumCases1DayNatural</span> <span class="o">&gt;</span><span class="p">(</span><span class="m">10</span><span class="o">*</span><span class="p">(</span><span class="n">population2018_A_70</span><span class="o">/</span><span class="p">(</span><span class="m">10</span><span class="n">^5</span><span class="p">))),</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
+<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day1cumSumDeathP100t_A_70</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">cumSumDeath1DayNatural</span> <span class="o">&gt;</span><span class="p">(</span><span class="m">1</span><span class="o">*</span><span class="p">(</span><span class="n">population2018_A_70</span><span class="o">/</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">5</span><span class="p">))),</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
+<span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="nf">group_by</span><span class="p">(</span><span class="n">data_m01</span><span class="p">,</span><span class="n">country</span><span class="p">),</span> <span class="n">index1Day10cumSumCaseP100t_A_70</span><span class="o">=</span><span class="nf">order_by</span><span class="p">(</span><span class="n">dateReport1DayNatural</span><span class="p">,</span> <span class="nf">cumsum</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span> <span class="n">cumSumCases1DayNatural</span> <span class="o">&gt;</span><span class="p">(</span><span class="m">10</span><span class="o">*</span><span class="p">(</span><span class="n">population2018_A_70</span><span class="o">/</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">5</span><span class="p">))),</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))))</span>
 
 
 <span class="c1">#TRANSFORM  find natural weekend siutable to first day of index (group of index)</span>
 <span class="n">v_Indexes_Week</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;index1Day1Death&quot;</span><span class="p">,</span> <span class="s">&quot;index1Day1Case&quot;</span><span class="p">,</span> <span class="s">&quot;index1Day1cumSumDeathP1mAll&quot;</span><span class="p">,</span> <span class="s">&quot;index1Day10cumSumCaseP1mAll&quot;</span><span class="p">,</span> <span class="s">&quot;index1Day1cumSumDeathP100t_A_70&quot;</span><span class="p">,</span> <span class="s">&quot;index1Day10cumSumCaseP100t_A_70&quot;</span><span class="p">)</span>
 <span class="nf">for </span><span class="p">(</span> <span class="n">x_indexName</span> <span class="n">in</span> <span class="n">v_Indexes_Week</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1"># select data when value of index is equel 1, and siutable for dzis date natural week number of week </span>
-  <span class="n">df_week_1</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="nf">[which</span><span class="p">((</span><span class="n">data_m01[</span><span class="p">,</span><span class="n">x_indexName]</span><span class="p">)</span><span class="o">==</span><span class="m">1</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="n">CONST_COUNTRYID_KEY</span><span class="p">,</span><span class="s">&quot;index7DayNatural&quot;</span><span class="p">)</span><span class="n">]</span>
+  <span class="n">df_week_1</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="p">[</span><span class="nf">which</span><span class="p">((</span><span class="n">data_m01</span><span class="p">[,</span><span class="n">x_indexName</span><span class="p">])</span><span class="o">==</span><span class="m">1</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="n">CONST_COUNTRYID_KEY</span><span class="p">,</span><span class="s">&quot;index7DayNatural&quot;</span><span class="p">)]</span>
   <span class="nf">setnames</span><span class="p">(</span><span class="n">df_week_1</span><span class="p">,</span> <span class="s">&quot;index7DayNatural&quot;</span><span class="p">,</span>  <span class="s">&quot;week_1&quot;</span><span class="p">)</span>
   <span class="c1">#number of siutble natural week decrease (- 1), it is value which will by use to counting number of weekend </span>
-  <span class="n">df_week_1[</span><span class="s">&#39;week_1&#39;</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="n">df_week_1</span><span class="o">$</span><span class="n">week_1</span> <span class="o">-</span> <span class="m">1</span> 
+  <span class="n">df_week_1</span><span class="p">[</span><span class="s">&#39;week_1&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">df_week_1</span><span class="o">$</span><span class="n">week_1</span> <span class="o">-</span> <span class="m">1</span> 
   <span class="c1">#counting siutable weekend to the index</span>
   <span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_m01</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df_week_1</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="n">CONST_COUNTRYID_KEY</span><span class="p">,</span> <span class="n">all</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
   <span class="n">x_indexWeekName</span> <span class="o">&lt;-</span> <span class="nf">str_replace</span><span class="p">(</span><span class="n">x_indexName</span><span class="p">,</span> <span class="s">&quot;1Day&quot;</span><span class="p">,</span> <span class="s">&quot;7Day&quot;</span><span class="p">)</span>
-  <span class="n">data_m01[x_indexWeekName]</span> <span class="o">&lt;-</span> <span class="n">data_m01[</span><span class="s">&quot;index7DayNatural&quot;</span><span class="n">]</span> <span class="o">-</span> <span class="n">data_m01[</span><span class="s">&quot;week_1&quot;</span><span class="n">]</span> 
+  <span class="n">data_m01</span><span class="p">[</span><span class="n">x_indexWeekName</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="p">[</span><span class="s">&quot;index7DayNatural&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data_m01</span><span class="p">[</span><span class="s">&quot;week_1&quot;</span><span class="p">]</span> 
   <span class="c1">#all weekend befor event is equal 0</span>
-  <span class="n">data_m01[data_m01[</span><span class="p">,</span><span class="n">x_indexWeekName]</span><span class="o">&lt;</span><span class="m">1</span><span class="p">,</span><span class="n">x_indexWeekName]</span> <span class="o">&lt;-</span> <span class="m">0</span>
+  <span class="n">data_m01</span><span class="p">[</span><span class="n">data_m01</span><span class="p">[,</span><span class="n">x_indexWeekName</span><span class="p">]</span><span class="o">&lt;</span><span class="m">1</span><span class="p">,</span><span class="n">x_indexWeekName</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">0</span>
   <span class="c1">#drop technical column</span>
   <span class="n">data_m01</span><span class="o">$</span><span class="n">week_1</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
 <span class="p">}</span>
@@ -14473,9 +13694,9 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="c1">#select data for first day of week</span>
 <span class="n">CONST_Aggregat_Column_Death_Week</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;sumCases7DayNatural&quot;</span><span class="p">,</span> <span class="s">&quot;avgCases7DayNatural&quot;</span><span class="p">,</span> <span class="s">&quot;quanCases7DayNatural&quot;</span><span class="p">)</span>
 <span class="n">CONST_Aggregat_Column_Cases_Week</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;sumDeaths7DayNatural&quot;</span><span class="p">,</span> <span class="s">&quot;avgDeaths7DayNatural&quot;</span><span class="p">,</span> <span class="s">&quot;quanDeaths7DayNatural&quot;</span><span class="p">)</span>
-<span class="n">data_PrevNext7Day</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="nf">[which</span><span class="p">((</span><span class="n">data_m01</span><span class="o">$</span><span class="n">index1DayNatural</span><span class="o">%%</span><span class="m">7</span><span class="p">)</span><span class="o">==</span><span class="m">1</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="n">CONST_COUNTRYID_KEY</span><span class="p">,</span><span class="s">&quot;index7DayNatural&quot;</span><span class="p">,</span><span class="n">CONST_Aggregat_Column_Death_Week</span><span class="p">,</span><span class="n">CONST_Aggregat_Column_Cases_Week</span><span class="p">)</span><span class="n">]</span>
+<span class="n">data_PrevNext7Day</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="p">[</span><span class="nf">which</span><span class="p">((</span><span class="n">data_m01</span><span class="o">$</span><span class="n">index1DayNatural</span><span class="o">%%</span><span class="m">7</span><span class="p">)</span><span class="o">==</span><span class="m">1</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="n">CONST_COUNTRYID_KEY</span><span class="p">,</span><span class="s">&quot;index7DayNatural&quot;</span><span class="p">,</span><span class="n">CONST_Aggregat_Column_Death_Week</span><span class="p">,</span><span class="n">CONST_Aggregat_Column_Cases_Week</span><span class="p">)]</span>
 
-<span class="c1">#internal function to marge pivius and next term</span>
+<span class="c1">#internal function to marge previus and next term</span>
 <span class="n">mergePriVNextTermColumns</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data_add</span><span class="p">,</span> <span class="n">columnNameSufix</span><span class="p">,</span> <span class="n">yIndex2Merge</span> <span class="p">){</span>
   <span class="nf">for </span><span class="p">(</span><span class="n">v_columnName</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="n">CONST_Aggregat_Column_Death_Week</span><span class="p">,</span> <span class="n">CONST_Aggregat_Column_Cases_Week</span><span class="p">))</span> <span class="p">{</span>
       <span class="nf">setnames</span><span class="p">(</span><span class="n">data_add</span><span class="p">,</span> <span class="n">v_columnName</span> <span class="p">,</span>  <span class="nf">paste0</span><span class="p">(</span><span class="n">v_columnName</span><span class="p">,</span> <span class="n">columnNameSufix</span><span class="p">))</span>
@@ -14487,7 +13708,7 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
   <span class="nf">return</span><span class="p">(</span><span class="n">data_m01</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="c1">#change index up for merging privius term</span>
+<span class="c1">#change index up for merging previous term</span>
 <span class="n">data_Prev7Day</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">data_PrevNext7Day</span><span class="p">,</span><span class="n">index7DayNaturalPrev</span><span class="o">=</span><span class="n">index7DayNatural</span><span class="m">+1</span><span class="p">)</span>
 <span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mergePriVNextTermColumns</span><span class="p">(</span><span class="n">data_Prev7Day</span><span class="p">,</span> <span class="s">&quot;Prev7Day&quot;</span><span class="p">,</span> <span class="s">&quot;index7DayNaturalPrev&quot;</span><span class="p">)</span>
 
@@ -14509,6 +13730,7 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Na zakończenie skryptu przygotowującego dane do analizy przeprowadzane jest ostateczne segregowanie danych oraz ich eksport w zależności od zastosowania. Dane można przenieść do bazy danych, z której później mogą być pobierane w celu dalszego przetwarzania. Innym pomysłem jest zapisanie danych jako plik, w zależności od potrzeb może to być np. *.csv, bądź w przypadku dalszego używania jezyka R, plik w wersji dla tego języka itp. Jeżeli dane będą przetwarzane w ramach jednego środowiska produkcyjnego kolejne skrypty odwołają się do zmiennych, które nie zostały usunięte: <code>df_COVID19Base</code> oraz <code>df_Country_DICT</code>.</p>
 
 </div>
 </div>
@@ -14535,30 +13757,43 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="n">columnsRegisterFALSE_data_m02_REJECT</span> <span class="o">&lt;-</span> <span class="nf">setdiff</span><span class="p">(</span><span class="nf">f_orderColumnFinallDataSet</span><span class="p">(</span><span class="s">&quot;v_order_column_SUM&quot;</span><span class="p">),</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">data_m01</span><span class="p">))</span>
                              
 <span class="c1">#finall order columns in data set</span>
-<span class="n">data_m02</span> <span class="o">&lt;-</span> <span class="n">data_m01[</span> <span class="p">,</span><span class="nf">f_orderColumnFinallDataSet</span><span class="p">(</span><span class="s">&quot;v_order_column_SUM&quot;</span><span class="p">)</span><span class="n">]</span>                              
+<span class="n">data_m02</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="p">[</span> <span class="p">,</span><span class="nf">f_orderColumnFinallDataSet</span><span class="p">(</span><span class="s">&quot;v_order_column_SUM&quot;</span><span class="p">)]</span>                              
 
 <span class="c1">#create dict dataSet with all country </span>
-<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="n">data_m02[</span><span class="p">,</span>  <span class="nf">c</span><span class="p">(</span><span class="nf">f_orderColumnFinallDataSet</span><span class="p">(</span><span class="s">&quot;v_country_SUM&quot;</span><span class="p">))</span><span class="n">]</span>
+<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="n">data_m02</span><span class="p">[,</span>  <span class="nf">c</span><span class="p">(</span><span class="nf">f_orderColumnFinallDataSet</span><span class="p">(</span><span class="s">&quot;v_country_SUM&quot;</span><span class="p">))]</span>
 <span class="c1">#only UNIQue </span>
 <span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">df_Country_DICT</span><span class="p">)</span>
 <span class="c1">#PK_coutryID has to by not null </span>
-<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="n">df_Country_DICT[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">df_Country_DICT</span><span class="o">$</span><span class="n">PK_countryID</span><span class="p">),</span><span class="n">]</span>
+<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="n">df_Country_DICT</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">df_Country_DICT</span><span class="o">$</span><span class="n">PK_countryID</span><span class="p">),]</span>
 <span class="c1">#one name of country has to by not null </span>
-<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="n">df_Country_DICT</span><span class="nf">[</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">df_Country_DICT</span><span class="o">$</span><span class="n">countryCommonName</span><span class="p">))</span><span class="o">|</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">df_Country_DICT</span><span class="o">$</span><span class="n">countryOfficialName</span><span class="p">)),</span><span class="n">]</span>
+<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="n">df_Country_DICT</span><span class="p">[(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">df_Country_DICT</span><span class="o">$</span><span class="n">countryCommonName</span><span class="p">))</span><span class="o">|</span><span class="p">(</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">df_Country_DICT</span><span class="o">$</span><span class="n">countryOfficialName</span><span class="p">)),]</span>
 
 <span class="c1">#clear variables</span>
 <span class="nf">rm</span><span class="p">(</span><span class="n">data_m01</span><span class="p">)</span>
 
 
-<span class="c1"># export data to databas or other packages</span>
+<span class="c1"># export data to database or other packages</span>
 <span class="n">df_COVID19Base</span> <span class="o">&lt;-</span> <span class="n">data_m02</span>
-<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span><span class="n">df_Country_DICT</span>
+<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="n">df_Country_DICT</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Na koniec odbywa się czyszczenie pamięci w dwóch etapach:</p>
+<ol>
+<li>Czyszczenie listy zmiennych <code>rm()</code></li>
+<li>Zwolnienie pamięci <code>gc()</code>
+Polecenie <code>rm()</code> nie zwalnia pamięci, a jedynie czyści wskaźniki do poszczególnych jej elementów, stąd po usunięciu zmiennych należy dokonać czyszczenia pamięci.</li>
+</ol>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -14573,7 +13808,7 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 <span class="c1">#Remove all variables without CAST_EXPORT_DATASET</span>
 <span class="n">ls_VariablesToRm</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
 <span class="n">ls_VariablesToRm</span> <span class="o">&lt;-</span> <span class="nf">ls</span><span class="p">()</span>
-<span class="n">ls_VariablesToRm</span> <span class="o">&lt;-</span><span class="n">ls_VariablesToRm[</span><span class="o">!</span><span class="n">ls_VariablesToRm</span> <span class="o">%in%</span> <span class="n">ls_VariablesToRm</span><span class="nf">[</span><span class="p">(</span><span class="n">ls_VariablesToRm</span> <span class="o">%in%</span> <span class="n">CONST_EXPORT_DATASET</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">ls_VariablesToRm</span> <span class="o">%like%</span> <span class="s">&#39;*_REJECT&#39;</span><span class="p">)</span><span class="n">]]</span>
+<span class="n">ls_VariablesToRm</span> <span class="o">&lt;-</span> <span class="n">ls_VariablesToRm</span><span class="p">[</span><span class="o">!</span><span class="n">ls_VariablesToRm</span> <span class="o">%in%</span> <span class="n">ls_VariablesToRm</span><span class="p">[(</span><span class="n">ls_VariablesToRm</span> <span class="o">%in%</span> <span class="n">CONST_EXPORT_DATASET</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">ls_VariablesToRm</span> <span class="o">%like%</span> <span class="s">&#39;*_REJECT&#39;</span><span class="p">)]]</span>
 <span class="nf">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="n">ls_VariablesToRm</span><span class="p">)</span>
 <span class="nf">gc</span><span class="p">()</span>
 </pre></div>
@@ -14582,13 +13817,6 @@ Więcej szczegółów w sekcji <code>Przygotowanie do tutoriala</code>.</p>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
 </div>
     </div>
   </div>
