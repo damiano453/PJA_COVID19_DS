@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>COVID19_001ETL_v23_PL</title>
+<title>COVID19_001ETL_v23_EN</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,20 +13077,20 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Analiza-danych-w-R">Analiza danych w R<a class="anchor-link" href="#Analiza-danych-w-R">&#182;</a></h1><hr>
-<h2 id="Cz&#281;&#347;&#263;-2---Przygotowanie-danych">Cz&#281;&#347;&#263; 2 - Przygotowanie danych<a class="anchor-link" href="#Cz&#281;&#347;&#263;-2---Przygotowanie-danych">&#182;</a></h2><p>Pierwszą częścia w przypadku przeprowadzania analizy jest pozyskanie oraz przygotowanie danych (ang. "Preprocessing"). Dane można wydobyć na wiele różnych sposobów np.:</p>
+<h1 id="Data-analysis-in-R">Data analysis in R<a class="anchor-link" href="#Data-analysis-in-R">&#182;</a></h1><hr>
+<h2 id="Part-2---Data-preprocessing">Part 2 - Data preprocessing<a class="anchor-link" href="#Part-2---Data-preprocessing">&#182;</a></h2><p>The First and the probably hardest part during data analysis is acquisition and preprocessing of data. There are many various ways, which allows for data collecting, f.e.:</p>
 <ol>
-<li>pozyskiwanie danych z baz danych</li>
-<li>pobieranie z treści ze stron internetowych (ang. "Web scraping")</li>
-<li>korzystanie z wystawionych zbiorów z baz danych przez interfejsy typu RestAPI</li>
+<li>collecting from database</li>
+<li>downloading from websites - Web scraping</li>
+<li>using ResAPI (service which allows for communicating and f.e. data transfer)</li>
 </ol>
-<p>Przed rozpoczęciem niezbędne jest środowisko programistycznego. Dedykowanym rozwiązaniem dla języka R jest skorzystanie z <a href="https://rstudio.com/#RStudio">RStudio</a> wraz z systemem Windows. Rstudio które pozwala na posiadanie lokalnego środowiska umożliwiającego uruchomienia skrytów bez problemów z instalacją bibliotek, czy ich zależnościami. Przy zastosowaniu samego R Studio wystarczy kopiować komendy z pól z kodem do środowiska.</p>
-<p>Dodatkowo na potrzeby kursu skrypty przetorzono w edytorze <a href="https://jupyter.org/">Jupyter</a>, który osadzono w chmurze AWS Sage Maker, na którym może być używany za darmo przez rok w ramach <a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc">AWS Free Tier</a>.</p>
-<p>Zastępstwem dal rozwiązania chmurowego może być wykorzysteanie środowiska <a href="https://anaconda.org/">Anaconda</a>, które integreje środowisko R z różnymi edytoram np. Jupyter, RStudio, Qt, czy Spyder.</p>
-<p>Więcej szczegółów w części 1: <code>Środowisko programistyczne</code>.</p>
-<h1 id="1.-Instalacja-i-przygotowanie-&#347;rodowiska">1. Instalacja i przygotowanie &#347;rodowiska<a class="anchor-link" href="#1.-Instalacja-i-przygotowanie-&#347;rodowiska">&#182;</a></h1><h2 id="1.1-Przygotowanie-&#347;rodowiska">1.1 Przygotowanie &#347;rodowiska<a class="anchor-link" href="#1.1-Przygotowanie-&#347;rodowiska">&#182;</a></h2><p>Skrypty zostały przygotowane w taki sposób, aby zadziałać w środowisku produkcyjnym. Zastosowano kilka elementów, które pozwoliłyby na uruchomienie w środowisku testowym.
+<p>Before you start it is necessary to get some development environment. The dedicated solution is <a href="https://rstudio.com/#RStudio">RStudio</a> for R language in the Windows ecosystem. This environment allows to get all necessary libraries automatically without problems with dependencies using your local computer. When you are using R Studio, you can copy commands from code fields.</p>
+<p>Additionally, this course was created in <a href="https://jupyter.org/">Jupyter</a> environment, which can be used on AWS Sage Maker cloud for free with <a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc">AWS Free Tier</a>.</p>
+<p>If you do not want to use cloud it is possible to do download all scripts and download <a href="https://anaconda.org/">Anaconda</a>, which integrates R interpreter with many various notebooks f.e. Jupyter, RStudio, Qt, Spyder.</p>
+<p>More details in part 1: <code>Development environment</code>.</p>
+<h1 id="1.-Installation-and-preparation-to-start">1. Installation and preparation to start<a class="anchor-link" href="#1.-Installation-and-preparation-to-start">&#182;</a></h1><h2 id="1.1-Environment-preparation">1.1 Environment preparation<a class="anchor-link" href="#1.1-Environment-preparation">&#182;</a></h2><p>Scripts written in this course were coded to allow working in production environment. Some steps were taken, which allows to deploy them in test environment.
 <br>
-Pierwszym krokiem jest zwolnienie pamięci oraz usunięcie ewentualnych zmiennych z poprzednich uruchomień.</p>
+The first step is to free memory and clean variables that could be used in previous iterations.</p>
 
 </div>
 </div>
@@ -13124,7 +13124,7 @@ Pierwszym krokiem jest zwolnienie pamięci oraz usunięcie ewentualnych zmiennyc
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.2.-Instalacja-i-za&#322;adowanie-bibliotek">1.2. Instalacja i za&#322;adowanie bibliotek<a class="anchor-link" href="#1.2.-Instalacja-i-za&#322;adowanie-bibliotek">&#182;</a></h2><p>Przed uruchomieniem skryptu należy zainstalować niezbędne biblioteki:</p>
+<h2 id="1.2.-Installation-and-loading-of-libraries">1.2. Installation and loading of libraries<a class="anchor-link" href="#1.2.-Installation-and-loading-of-libraries">&#182;</a></h2><p>It is necessary to install and load libraries before start of the scrip. There are all libraries used in the project:</p>
 <ol>
 <li><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2">utils</a></li>
 <li><a href="https://www.rdocumentation.org/packages/fs/versions/1.4.1">fs</a> </li>
@@ -13138,7 +13138,7 @@ Pierwszym krokiem jest zwolnienie pamięci oraz usunięcie ewentualnych zmiennyc
 <li><a href="https://www.rdocumentation.org/packages/jsonify/versions/1.1.1">jsonify</a> </li>
 <li><a href="https://www.rdocumentation.org/packages/reshape/versions/0.8.8">reshape</a></li>
 </ol>
-<p>W środowisku produkcyjnym biblioteki będą zainstalowane i załadowane, więc ten krok ostateczine będzie pominięty, jednak na potrzeby kursu jest on niezbędny dla uruchomienia na lokalnym komputerze. Warto zauważyć, że dodano instrukcje warunkowe, które instalują wymagane biblioteki tylko, gdy nie znajdą ich w środowisku - <code>if(!require(libray_name))</code>.</p>
+<p>In the production environment, all libraries should be preinstalled and preloaded, so the next step will be omitted. This step needs to be done in the local environment, to load all libraries. There are additional conditional instructions, which checks if libraries are preinstalled, installations starts - <code>if(!require(libray_name))</code>.</p>
 
 </div>
 </div>
@@ -13187,16 +13187,14 @@ Pierwszym krokiem jest zwolnienie pamięci oraz usunięcie ewentualnych zmiennyc
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2.-Funkcje">2. Funkcje<a class="anchor-link" href="#2.-Funkcje">&#182;</a></h1><p><a href="https://www.tutorialspoint.com/r/r_functions.htm">Funkcje</a> są niezbędne do zamknięcia powtarzalnego kodu w ramach jednego zbioru, w celu uporządkowania. Na potrzeby skryptu zostały stworzone 2 funkcje:</p>
+<h1 id="2.-Functions">2. Functions<a class="anchor-link" href="#2.-Functions">&#182;</a></h1><p><a href="https://www.tutorialspoint.com/r/r_functions.htm">Functions</a> allows to put repetitive parts of the program in smaller logical parts. It helps to have order in the code. In this script two functions were made:</p>
 <ol>
-<li><p>f_collapseColumns2Colection</p>
-<p><code>f_collapseColumns2Colection &lt;- function(df_add, key, nameColectColumn, nameNewColumn )</code> <br>
- przyjmuje jako argumenty df_add, key, nameColectColumn oraz nameNewColumn <br>
- <br></p>
-</li>
-<li><p>f_orderColumnFinallDataSet <br>
- Wykorzysywana do stworzenia ostatecznego zbioru danych.</p>
-</li>
+<li>f_collapseColumns2Colection <br>
+    <code>f_collapseColumns2Colection &lt;- function(df_add, key, nameColectColumn,nameNewColumn )</code> <br>
+    as arguments has df_add, key, nameColectColumn oraz nameNewColumn <br>
+    <br></li>
+<li>f_orderColumnFinallDataSet <br>
+    Is used to create final data set.</li>
 </ol>
 
 </div>
@@ -13262,8 +13260,9 @@ Pierwszym krokiem jest zwolnienie pamięci oraz usunięcie ewentualnych zmiennyc
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="3.-Sta&#322;e-oraz-zmienne-globalne">3. Sta&#322;e oraz zmienne globalne<a class="anchor-link" href="#3.-Sta&#322;e-oraz-zmienne-globalne">&#182;</a></h1><p>Kolejnym etapem jest stworzenie stałych oraz zmiennych globalnych używanych w kodzie. Pozwala to na porządek w tworzeniu kodu. Dodatkowo z użyciem stałych możemy sparametryzować skrypt z użyciem stałych w tym miejscu.
-Należy pamiętać, że trzeba dostosować ścieżki do plików ze statystykami:</p>
+<h1 id="3.-Constants-and-global-variables">3. Constants and global variables<a class="anchor-link" href="#3.-Constants-and-global-variables">&#182;</a></h1><p>The next stage is creating constants and global variables used in code. This helps in keeping order in code. Additionally, constants help in the parametrization of the script. 
+<br>
+In this script it is necessary to provides paths to all files or keep structure of files like in <a href="https://github.com/damiano453/PJA_COVID19_DS">HitHub</a>.</p>
 <ol>
 <li>CONST_WORLDBANK_FILES</li>
 <li>CONST_COUTRY_DISTANCE_FILE</li>
@@ -13285,14 +13284,14 @@ Należy pamiętać, że trzeba dostosować ścieżki do plików ze statystykami:
 <span class="n">CONST_ECfDP_URL</span> <span class="o">&lt;-</span> <span class="s">&quot;https://opendata.ecdc.europa.eu/covid19/casedistribution/csv&quot;</span>
 
 <span class="c1">#files with data about population over 70</span>
-<span class="n">CONST_WORLDBANK_FILES</span> <span class="o">&lt;-</span> <span class="s">&quot;../../data/WorldBank/&quot;</span>
+<span class="n">CONST_WORLDBANK_FILES</span> <span class="o">&lt;-</span> <span class="s">&quot;../data/WorldBank/&quot;</span>
 <span class="n">CONST_WORLDBANK_FILES_INDICATORS</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="n">CONST_WORLDBANK_FILES</span><span class="p">,</span><span class="s">&quot;indicators/&quot;</span><span class="p">)</span> 
 
 <span class="c1">#files with data about country distance</span>
-<span class="n">CONST_COUTRY_DISTANCE_FILE</span> <span class="o">&lt;-</span> <span class="s">&quot;../../data/countries_distances.csv&quot;</span>
+<span class="n">CONST_COUTRY_DISTANCE_FILE</span> <span class="o">&lt;-</span> <span class="s">&quot;../data/countries_distances.csv&quot;</span>
 
 <span class="c1">#files with data about country </span>
-<span class="n">CONST_COUTRY_FILE</span> <span class="o">&lt;-</span> <span class="s">&quot;../../data/country.txt&quot;</span>
+<span class="n">CONST_COUTRY_FILE</span> <span class="o">&lt;-</span> <span class="s">&quot;../data/country.txt&quot;</span>
 
 <span class="c1">#key for identity country </span>
 <span class="n">CONST_COUNTRY_KEY</span> <span class="o">&lt;-</span> <span class="s">&quot;country&quot;</span>
@@ -13313,7 +13312,7 @@ Należy pamiętać, że trzeba dostosować ścieżki do plików ze statystykami:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="4.-Pobranie-i-przygotowanie-danych-z-European-Center-for-Disease-Prevention-and-Control">4. Pobranie i przygotowanie danych z European Center for Disease Prevention and Control<a class="anchor-link" href="#4.-Pobranie-i-przygotowanie-danych-z-European-Center-for-Disease-Prevention-and-Control">&#182;</a></h1><p>Dane do analizy pobrano ze strony Europejskiego Centrum zapobiegania i kontroli chorób z linku przypisanego do stałej:</p>
+<h1 id="4.-Download-and-preparation-of-data-from-European-Center-for-Disease-Prevention-and-Control">4. Download and preparation of data from European Center for Disease Prevention and Control<a class="anchor-link" href="#4.-Download-and-preparation-of-data-from-European-Center-for-Disease-Prevention-and-Control">&#182;</a></h1><p>Data is collected from European Center for Disease Prevention and Control from the following link:</p>
 <p><code>CONST_ECfDP_URL &lt;-</code><a href="https://opendata.ecdc.europa.eu/covid19/casedistribution/csv">https://opendata.ecdc.europa.eu/covid19/casedistribution/csv</a></p>
 
 </div>
@@ -13321,7 +13320,7 @@ Należy pamiętać, że trzeba dostosować ścieżki do plików ze statystykami:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#######################################################</span>
@@ -13350,16 +13349,15 @@ Należy pamiętać, że trzeba dostosować ścieżki do plików ze statystykami:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Folder z lokalizacji <code>CONST_WORLDBANK_FILES</code> w strukturze plików z <a href="https://github.com/damiano453/PJA_COVID19_DS">GitHuba</a>, posiada dodatkowe pliki z informacjami o populacji oraz o PKB w danych krajach, pobranych wcześniej ze strony <a href="https://www.worldbank.org/">Banku Światowego</a>. 
-<br>
-Warto zauważyć, że niepotrzebne zmienne są kasowane na bieżąco, żeby nie zaśmiecać pamięci niepotrzebnymi zasobami z użyciem funkcji <code>rm()</code>.</p>
+<p>The folder in localization <code>CONST_WORLDBANK_FILES</code>contains additional files with information connected with population and GDB in every country. Data were collected from <a href="https://www.worldbank.org/">World Bank</a>. 
+<br>Variables not used in further code are deleted immediately, to free memory.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">###############################</span>
@@ -13396,16 +13394,16 @@ Warto zauważyć, że niepotrzebne zmienne są kasowane na bieżąco, żeby nie 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Wartości pozyskane z <a href="(https://www.worldbank.org/">Banku Światowego</a>) dodane są do zmiennej typu dataFrame o nazwie df_Country_00, która ostatecznie jest zamieniana na df_Country_01, w której nadane zostały docelowe nazwy kolumn. 
+<p>Data collected from <a href="https://www.worldbank.org/">World Bank</a> are added to variable (type: dataFrame) called <code>df_Country_00</code>. Additionally in this place column names are added.
 <br>
-Numeracja przy zmiennej pozwalała na fragmentaryczne debugowanie kodu w trakcie tworzenia.</p>
+Moreover, every name is numerated. This helps in further debugging of code during coding.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">###############################</span>
@@ -13468,7 +13466,7 @@ Numeracja przy zmiennej pozwalała na fragmentaryczne debugowanie kodu w trakcie
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ten krok jest istotny z punktu widzenia tworzenia mapy. Z pliku "/data/countries_distances.csv" pobierane są odległości między pomiędzy krajami, na podstawie których można utowrzyć mapę prezentowaną w sekcji <code>Analityka</code>, a sposób jej generacji jest przedstawiony w kolejnych skryptach.</p>
+<p>This step is very important in map creation. All distances between countries are collected from file: "/data/countries_distances.csv". This helps in generating maps published in the <code>Analytics</code> section. The process of generating is presented in scripts.</p>
 
 </div>
 </div>
@@ -13542,27 +13540,29 @@ Numeracja przy zmiennej pozwalała na fragmentaryczne debugowanie kodu w trakcie
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Poniżej wyliczane są różne statystyki, których wyniki są używane w kolejnych skryptach.
+<p>The process of statistics counting is shown in this part. Results are used in next script.
 <br>
-W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór wynikowy zawiera informacje o populacji, zachorowaniach na koronawirusa oraz odległościach pozwalających na umieszczenie danych na mapie. Dodatkowo do zbioru dodane są statystyki tj.:</p>
+At the beginning data sets prepared sooner are connected in one. The final set contains information about the population, number of illnesses, deaths, and distances between countries. Additionally, datasets contain statistics such as:</p>
 <ol>
-<li>Ilość śmierci od 7-ego dnia po pierwszej śmierci, liczona w interwale tygodniowym</li>
-<li>Ilość śmierci od 30-tego dnia po zanotowaniu pierwszej śmierci, liczona w interwale miesięcznym</li>
+<li>Number of death from 7th day counting from first death (in the 7-day interval)</li>
+<li>Number of death from 30th day counting from first death (in the 30-day interval)</li>
 </ol>
-<p>Dodatkowo statystyki wyznaczono dla:</p>
+<p>Additionally, statistics are divided for:</p>
 <ol>
-<li>całej populacji </li>
-<li>kobiet, mężczyzn i skumulowanej liczby osób powyżej 70-ego roku życia</li>
-<li>kobiet, mężczyzn i skumulowanej liczby osób powyżej 80-ego roku życia</li>
+<li>all population</li>
+<li>women, men and cumulated (both women and men) above 70 years old</li>
+<li>women, men and cumulated (both women and men) above 80 years old </li>
 </ol>
-<p>W celu umożliwienia przeprowadzenia bardziej obiektywnej analizy porównawczej pomiędzy poszczególnymi państwami, w których jest różna ilość mieszkańców (często różnice w ilości ludności sięgają więcej niż 100%), ilość zgonów i zachorowań przeliczano na 100 tyś. mieszkańców danego państwa.</p>
+<p>All statistics are used in further scripts used for data visualization.
+<br>
+The main goal was to show objective data comparison between countries with different numbers of people. In many cases, the difference is higher than 100%. To ensure about rationality number of deaths and illnesses was counted for 100k people in every country.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#######################################################</span>
@@ -13703,7 +13703,7 @@ W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór
 <span class="n">CONST_Aggregat_Column_Cases_Week</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;sumDeaths7DayNatural&quot;</span><span class="p">,</span> <span class="s">&quot;avgDeaths7DayNatural&quot;</span><span class="p">,</span> <span class="s">&quot;quanDeaths7DayNatural&quot;</span><span class="p">)</span>
 <span class="n">data_PrevNext7Day</span> <span class="o">&lt;-</span> <span class="n">data_m01</span><span class="p">[</span><span class="nf">which</span><span class="p">((</span><span class="n">data_m01</span><span class="o">$</span><span class="n">index1DayNatural</span><span class="o">%%</span><span class="m">7</span><span class="p">)</span><span class="o">==</span><span class="m">1</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="n">CONST_COUNTRYID_KEY</span><span class="p">,</span><span class="s">&quot;index7DayNatural&quot;</span><span class="p">,</span><span class="n">CONST_Aggregat_Column_Death_Week</span><span class="p">,</span><span class="n">CONST_Aggregat_Column_Cases_Week</span><span class="p">)]</span>
 
-<span class="c1">#internal function to marge previus and next term</span>
+<span class="c1">#internal function to marge pivius and next term</span>
 <span class="n">mergePriVNextTermColumns</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data_add</span><span class="p">,</span> <span class="n">columnNameSufix</span><span class="p">,</span> <span class="n">yIndex2Merge</span> <span class="p">){</span>
   <span class="nf">for </span><span class="p">(</span><span class="n">v_columnName</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="n">CONST_Aggregat_Column_Death_Week</span><span class="p">,</span> <span class="n">CONST_Aggregat_Column_Cases_Week</span><span class="p">))</span> <span class="p">{</span>
       <span class="nf">setnames</span><span class="p">(</span><span class="n">data_add</span><span class="p">,</span> <span class="n">v_columnName</span> <span class="p">,</span>  <span class="nf">paste0</span><span class="p">(</span><span class="n">v_columnName</span><span class="p">,</span> <span class="n">columnNameSufix</span><span class="p">))</span>
@@ -13715,7 +13715,7 @@ W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór
   <span class="nf">return</span><span class="p">(</span><span class="n">data_m01</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="c1">#change index up for merging previous term</span>
+<span class="c1">#change index up for merging privius term</span>
 <span class="n">data_Prev7Day</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">data_PrevNext7Day</span><span class="p">,</span><span class="n">index7DayNaturalPrev</span><span class="o">=</span><span class="n">index7DayNatural</span><span class="m">+1</span><span class="p">)</span>
 <span class="n">data_m01</span> <span class="o">&lt;-</span> <span class="nf">mergePriVNextTermColumns</span><span class="p">(</span><span class="n">data_Prev7Day</span><span class="p">,</span> <span class="s">&quot;Prev7Day&quot;</span><span class="p">,</span> <span class="s">&quot;index7DayNaturalPrev&quot;</span><span class="p">)</span>
 
@@ -13737,7 +13737,11 @@ W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na zakończenie skryptu przygotowującego dane do analizy przeprowadzane jest ostateczne segregowanie danych oraz ich eksport w zależności od zastosowania. Dane można przenieść do bazy danych, z której później mogą być pobierane w celu dalszego przetwarzania. Innym pomysłem jest zapisanie danych jako plik, w zależności od potrzeb może to być np. *.csv, bądź w przypadku dalszego używania jezyka R, plik w wersji dla tego języka itp. Jeżeli dane będą przetwarzane w ramach jednego środowiska produkcyjnego kolejne skrypty odwołają się do zmiennych, które nie zostały usunięte: <code>df_COVID19Base</code> oraz <code>df_Country_DICT</code>.</p>
+<p>In this part, final data sets preparation is done. All data is sorted and prepared to export.
+<br>
+Here data can be exported to database, saved in file, or the next script can be started, which will use prepared variables. A good idea is to save as <code>*.csv</code> file or R standard which will allow for easier reading in other R scripts.
+<br>
+If data will be used in the same environment next sripts will use variables which were not deleted: <code>df_COVID19Base</code> and <code>df_Country_DICT</code>.</p>
 
 </div>
 </div>
@@ -13779,9 +13783,9 @@ W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór
 <span class="nf">rm</span><span class="p">(</span><span class="n">data_m01</span><span class="p">)</span>
 
 
-<span class="c1"># export data to database or other packages</span>
+<span class="c1"># export data to databas or other packages</span>
 <span class="n">df_COVID19Base</span> <span class="o">&lt;-</span> <span class="n">data_m02</span>
-<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span> <span class="n">df_Country_DICT</span>
+<span class="n">df_Country_DICT</span> <span class="o">&lt;-</span><span class="n">df_Country_DICT</span>
 </pre></div>
 
     </div>
@@ -13792,12 +13796,12 @@ W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na koniec odbywa się czyszczenie pamięci w dwóch etapach:</p>
+<p>In the end, final memory cleaning is implemented. It was coded in 2 steps:</p>
 <ol>
-<li>Czyszczenie listy zmiennych <code>rm()</code></li>
-<li>Zwolnienie pamięci <code>gc()</code></li>
+<li>Cleaning list of variables <code>rm()</code></li>
+<li>Getting memory free <code>gc()</code></li>
 </ol>
-<p>Polecenie <code>rm()</code> nie zwalnia pamięci, a jedynie czyści wskaźniki do poszczególnych jej elementów, stąd po usunięciu zmiennych należy dokonać czyszczenia pamięci.</p>
+<p>Command <code>rm()</code> removes variables, but memory is still not free. To free memory it is necessary to add <code>gc()</code> command after <code>rm()</code>.</p>
 
 </div>
 </div>
@@ -13815,7 +13819,7 @@ W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór
 <span class="c1">#Remove all variables without CAST_EXPORT_DATASET</span>
 <span class="n">ls_VariablesToRm</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
 <span class="n">ls_VariablesToRm</span> <span class="o">&lt;-</span> <span class="nf">ls</span><span class="p">()</span>
-<span class="n">ls_VariablesToRm</span> <span class="o">&lt;-</span> <span class="n">ls_VariablesToRm</span><span class="p">[</span><span class="o">!</span><span class="n">ls_VariablesToRm</span> <span class="o">%in%</span> <span class="n">ls_VariablesToRm</span><span class="p">[(</span><span class="n">ls_VariablesToRm</span> <span class="o">%in%</span> <span class="n">CONST_EXPORT_DATASET</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">ls_VariablesToRm</span> <span class="o">%like%</span> <span class="s">&#39;*_REJECT&#39;</span><span class="p">)]]</span>
+<span class="n">ls_VariablesToRm</span> <span class="o">&lt;-</span><span class="n">ls_VariablesToRm</span><span class="p">[</span><span class="o">!</span><span class="n">ls_VariablesToRm</span> <span class="o">%in%</span> <span class="n">ls_VariablesToRm</span><span class="p">[(</span><span class="n">ls_VariablesToRm</span> <span class="o">%in%</span> <span class="n">CONST_EXPORT_DATASET</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">ls_VariablesToRm</span> <span class="o">%like%</span> <span class="s">&#39;*_REJECT&#39;</span><span class="p">)]]</span>
 <span class="nf">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="n">ls_VariablesToRm</span><span class="p">)</span>
 <span class="nf">gc</span><span class="p">()</span>
 </pre></div>
