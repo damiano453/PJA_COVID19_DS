@@ -13825,6 +13825,30 @@ W pierwszej kolejności zbiory danych obrabiane wcześniej są łączone. Zbiór
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="RESTful-API">RESTful API<a class="anchor-link" href="#RESTful-API">&#182;</a></h1><p>Wyżej opisany skrypt został użyty to zapisania danych w bazie danych w formatach cab i js, które są niezbędne do stworzenia i udostępnienia danych za pomocą chmurowej wersji bazy MongoDB: <a href="https://www.mongodb.com/cloud/atlas">Mongodb Atlas</a>. <br><br>
+Na potrzeby upublicznienia danych stworzone zostało Rest API, które umożliwia odwoływanie się do serwera bazy danych za pomocą interfejsu użytkownika. Kod może zostać pobrany w sekcji <code>Pobierz</code>. Do uruchomienia Rest API niezbędna jest podstawowa wiedza z <a href="https://nodejs.org/">Node.js</a> and Java Script. Rest API umożliwia tworzenie zapytań za pomocą komend charakterystycznych dla MongoDB (<a href="https://docs.mongodb.com/manual/reference/operator/query/">https://docs.mongodb.com/manual/reference/operator/query/</a>).<br><br>
+Żeby wykorzystać narzędzia stworzone na potrzeby skryptu należy zainstalować oraz zarejestrować się w serwisie <a href="https://www.postman.com/">Postman</a>, która umożliwia tworzenie zapytań typu POST. Zapytania należy użyć z pomocą linku: (<a href="https://oroibigdataproject.herokuapp.com/api/covid/query">https://oroibigdataproject.herokuapp.com/api/covid/query</a>).<br>
+Przykładowe zapytanie za pomocą struktury MongoDB: 
+{
+    "query": {
+        "sumDeaths7DayNatural": { 
+            "$lte": 10
+        },
+        "deaths1DayNatural": {
+            "$eq": 3
+        }
+    },
+    "limit": 15
+}
+<br><br>
+Rest API zostało wykonane i używane za pomocą PaaS <a href="https://www.heroku.com/">Heroku</a>.</p>
+
+</div>
+</div>
+</div>
     </div>
   </div>
 </body>
